@@ -1,0 +1,58 @@
+<header>
+  <nav class="navbar bg-white shadow-sm p-0">
+    <div class="container col-12 justify-content-center">
+      <div class="col-2 m-1">
+        <a href="/">
+          <img src="../../../public/favicon.ico" width="54" height="54" alt="pgpIcon"
+               style="margin-left: 105px; margin-top: 3px;" class="rounded"/>
+          <div class="float-right">
+            <h3 class="h3 m-0">Pro Gaming Parts</h3>
+            <span class="text-muted text-sm-center font-italic font-weight-bold">by gamers, for gamers <i
+              class="fa-solid fa-bag-shopping"></i> <i class="fa-solid fa-gamepad"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 d-flex justify-content-center">
+        <div class="input-group col-8">
+          <div class="input-group-prepend" id="globalSearchButton">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">
+                            <i class="fas fa-search"></i>
+                        </span>
+          </div>
+          <input type="text" id="globalSearchInput" class="form-control"
+                 aria-describedby="inputGroup-sizing-sm" placeholder="Szukaj...">
+          <ul class="list-group shadow-sm" id="globalSearchResult"></ul>
+        </div>
+      </div>
+      <div class="col-2 float-right d-flex justify-content-around">
+<!--        @* 	@if (!string.IsNullOrEmpty(Context.Session.GetString("UserId")))-->
+<!--      {-->
+<!--        <a href="/">-->
+<!--          <div class="navbar-brand nav-item nav-icon" data-toggle="tooltip" data-placement="bottom" title="Moje konto">-->
+<!--            <h6 class="p-1">-->
+<!--              <i class="fa-solid fa-jedi"></i>-->
+<!--              @Context.Session.GetString("Name")-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      }-->
+<!--        else-->
+<!--        { *@-->
+<!--                <a href="@Routing.SignIn">-->
+<!--                    <div class="navbar-brand nav-item nav-icon" data-toggle="tooltip" data-placement="bottom"-->
+<!--                         title="Sign In">-->
+<!--                        <i class="fas fa-user"></i>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--                @* } *@-->
+        <a href="/">
+          <div class="navbar-brand nav-item nav-icon" data-toggle="tooltip" data-placement="bottom"
+               title="Koszyk">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+    <app-navmenu/>
+  </nav>
+</header>
