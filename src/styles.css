@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* bg-colors */
+  --primary: oklch(0.9 0.17 100);
+  --bg-dark: oklch(0.1 0 264);
+  --bg: oklch(0.96 0 264);
+  --bg-light: oklch(0.3 0 264);
+  /* text-colors */
+  --text: oklch(0.96 0 264);
+  --text-muted: oklch(0.76 0 264);
+  /* shadows */
+  --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
+    /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+  --shadow-m: inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
+    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
+  --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
+}
+body {
+  --ff: "Manrope", sans-serif;
+  --nav-cat-font: 500 1.1rem/1em var(--ff);
+  --nav-logo-font: 600 1.1rem/1em var(--ff);
+  background-color: var(--bg-dark);
+
+  /* bg-colors */
+  --primary: oklch(0.65 0.15 264);
+  --bg-dark: oklch(0.92 0 264);
+  --bg-light: oklch(1 0 264);
+  /* text-colors */
+  --text: oklch(0.15 0 264);
+  --text-muted: oklch(0.4 0 264);
+}
+.nav-logo{
+  font: var(--nav-logo-font) !important;
+}
+.nav-element {
+  background: var(--bg-light);
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-s);
+  font: var(--nav-cat-font);
+}
+.nav-element-cat{
+}
+nav{
+  background: var(--bg);
+  border-radius: 0.5rem;
+}
+
+.search-bar {
+  background: var(--bg-light);
+  box-shadow: var(--shadow-s);
+  border-radius: 0.5rem;
+  border: none;
+}
+
+

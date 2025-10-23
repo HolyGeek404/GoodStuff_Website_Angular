@@ -1,14 +1,14 @@
-<div class="d-flex p-2 rounded-1 shadow-sm align-items-center justify-content-between">
-  <div class="d-flex align-items-center">
+<nav class="d-flex m-2 p-2 align-items-center justify-content-between">
+  <div class="d-flex nav-logo p-2 nav-element align-items-center">
     <img class="rounded" width="40" height="40" ngSrc="favicon.ico" alt="icon">
     <span class="m-1" style="font-size: 1.2rem">GoodStuff</span>
   </div>
-  <div class="col-8">
-    <app-navmenu></app-navmenu>
+  <div>
+    <input class="search-bar p-2" type="search" placeholder="Szukaj...">
   </div>
-  <div class="">
-<!--    <div class="col-2">-->
-<!--      <img width="40" height="40" ngSrc="favicon.ico">-->
-<!--    </div>-->
+  <app-navmenu></app-navmenu>
+  <div class="d-flex nav-logo p-2 nav-element justify-content-between">
+    <i class="fas fa-user p-2"></i>
+    <i class="fas fa-shopping-cart p-2"></i>
   </div>
-</div>
+</nav>
