@@ -41,6 +41,7 @@ body {
 }
 .nav-element-cat {
   font: var(--nav-cat-font);
+  margin-top: 10rem;
 }
 .category:hover{
   box-shadow: var(--shadow-l);
@@ -65,11 +66,6 @@ nav{
   width: var(--category-size);
   height: var(--category-size);
   font: var(--nav-logo-font);
-}
-.category-svg{
-  --cat-svg-size: 6rem;
-  width: var(--cat-svg-size);
-  height: var(--cat-svg-size);
 }
 
 .search-bar {

@@ -1,1 +1,5 @@
-<p>home works!</p>
+<div class="d-flex nav-element-cat">
+  @for (cat of categories; track categories) {
+    <app-category-card [category]="cat"/>
+  }
+</div>
