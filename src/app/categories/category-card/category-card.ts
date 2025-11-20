@@ -18,12 +18,4 @@ export class CategoryCard {
   categoryImgPath = computed(() => {
     return "categories/" + this.category().toLowerCase() + ".svg";
   });
-
- constructor(private funcService: GoodStuffFunctionsService) {
-
- }
-
-  goToCategory = () => {
-
-  }
 }

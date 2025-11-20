@@ -9,7 +9,7 @@ import {BaseProduct} from '../models/product/BaseProduct';
 
 @Injectable({ providedIn: 'root' })
 export class GoodStuffFunctionsService {
-  private baseUrl = 'http://localhost:7257/api/products'; // Azure Function base URL
+  private baseUrl = 'http://localhost:7257/api/proxy/product';
 
   constructor(private http: HttpClient) {}
 
@@ -22,16 +22,7 @@ export class GoodStuffFunctionsService {
       case ProductTypes.COOLER:
         return this.http.get<Cooler[]>(`${this.baseUrl}/COOLER`);
       default:
-        return this.http.get<BaseProduct[]>(`${this.baseUrl}/CPU`);
+        return this.http.get<Cpu[]>(`${this.baseUrl}/CPU`);
     }
-  }
-
-
-  private getCpus(): Observable<Cpu[]> {
-    return this.http.get<Cpu[]>(`${this.baseUrl}/CPU`);
-  }
-
-  private getGpus(): Observable<Gpu[]> {
-    return this.http.get<Gpu[]>(`${this.baseUrl}/GPU`);
   }
 }
