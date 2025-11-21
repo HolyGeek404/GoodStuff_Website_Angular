@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
@@ -12,13 +12,48 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 })
 export class SignIn {
   signInForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.pattern(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"))])
   });
 
-  onSubmit()
-  {
+  errorMessages = {
+    email: {
+      required: 'Email is required',
+      email: 'Please enter a valid email address'
+    },
+    password: {
+      required: 'Password is required',
+      pattern: 'Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&)'
+    }
+  };
+  errors: string[] = [];
 
+  onSubmit() {
+    this.validate();
+  }
 
+  validate(){
+    // clear error messages
+    this.errors = [];
+
+    // validate email
+    if(!this.signInForm.controls.email.valid){
+      if(this.signInForm.controls.email.errors!['required'] != null){
+        this.errors.push(this.errorMessages.email.required);
+      }
+      if(this.signInForm.controls.email.errors!['email'] != null){
+        this.errors.push(this.errorMessages.email.email);
+      }
+    }
+
+    //validate password
+    if(!this.signInForm.controls.password.valid){
+      if(this.signInForm.controls.password.errors!['required'] != null){
+        this.errors.push(this.errorMessages.password.required);
+      }
+      if(this.signInForm.controls.password.errors!['pattern'] != null){
+        this.errors.push(this.errorMessages.password.pattern);
+      }
+    }
   }
 }
