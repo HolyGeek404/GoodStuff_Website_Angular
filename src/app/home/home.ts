@@ -13,11 +13,4 @@ import {CategoryCard} from '../categories/category-card/category-card';
 })
 export class Home {
   categories = Object.values(ProductTypes);
-  constructor() {
-    console.log(this.categories);
-  }
-  ngOnInit() {
-    console.log(this.categories);
-
-  }
 }

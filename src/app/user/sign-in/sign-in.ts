@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {EmailValidator, FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,8 +11,10 @@ import {EmailValidator, FormControl, FormGroup, FormsModule, ReactiveFormsModule
   styleUrl: './sign-in.css'
 })
 export class SignIn {
-  email = new FormControl();
-  password = new FormControl();
+  signInForm = new FormGroup({
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  });
 
   onSubmit()
   {
