@@ -29,20 +29,25 @@ export class SignIn {
   errors: string[] = [];
 
   onSubmit() {
-    this.validate();
+    if (this.validate() && this.signInForm.valid) {
+
+    }
   }
 
-  validate(){
+  validate(): boolean {
     // clear error messages
     this.errors = [];
+    let isValid = true;
 
     // validate email
     if(!this.signInForm.controls.email.valid){
       if(this.signInForm.controls.email.errors!['required'] != null){
         this.errors.push(this.errorMessages.email.required);
+        isValid = false;
       }
       if(this.signInForm.controls.email.errors!['email'] != null){
         this.errors.push(this.errorMessages.email.email);
+        isValid = false;
       }
     }
 
@@ -50,10 +55,14 @@ export class SignIn {
     if(!this.signInForm.controls.password.valid){
       if(this.signInForm.controls.password.errors!['required'] != null){
         this.errors.push(this.errorMessages.password.required);
+        isValid = false;
       }
       if(this.signInForm.controls.password.errors!['pattern'] != null){
         this.errors.push(this.errorMessages.password.pattern);
+        isValid = false;
       }
     }
+
+    return isValid;
   }
 }
